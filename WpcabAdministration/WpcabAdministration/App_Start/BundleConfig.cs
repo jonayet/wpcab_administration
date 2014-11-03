@@ -27,6 +27,16 @@ namespace WpcabAdministration
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
+            ////////////////////////////////////////////////
+            bundles.Add(new ScriptBundle("~/bundles/js-multicolumn").Include(
+                      "~/Scripts/bootstrap-2.1.0-multicolumn/bootstrap.min.js",
+                      "~/Scripts/bootstrap-2.1.0-multicolumn/jquery-1.8.0.min.js"));
+
+            bundles.Add(new StyleBundle("~/Content/css-multicolumn").Include(
+                      "~/Content/bootstrap-2.1.0-multicolumn/bootstrap.css",
+                      "~/Content/bootstrap-2.1.0-multicolumn/bootstrap-responsive.css"));
+            ////////////////////////////////////////////////
+
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862
             BundleTable.EnableOptimizations = true;

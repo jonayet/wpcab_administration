@@ -1,0 +1,274 @@
+﻿@model IEnumerable<WpcabAdministration.Models.Member>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Country.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.District.NameEn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PoliceStation.NameEn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostOffice.NameEn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Village.NameEn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Zone.NameEn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FormId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NameEn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NameBn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FatherNameEn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FatherNameBn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotherNameEn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotherNameBn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaritalStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BloodGroup)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Photo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SignatureImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MobileNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NationalId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfMembership)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDateOfAccount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EducationalQualification)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Profession)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Experience)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MonthlyIncome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MonthlyExpense)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoOfFamilyMember)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FinancialStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Relegion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsPassed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfPassing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsInactive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfInactive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReferralId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nationality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.District.NameEn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PoliceStation.NameEn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostOffice.NameEn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Village.NameEn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Zone.NameEn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FormId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameEn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameBn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FatherNameEn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FatherNameBn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MotherNameEn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MotherNameBn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaritalStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BloodGroup)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Photo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SignatureImage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MobileNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NationalId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfMembership)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDateOfAccount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EducationalQualification)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Profession)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Experience)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MonthlyIncome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MonthlyExpense)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoOfFamilyMember)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FinancialStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Relegion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsPassed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfPassing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsInactive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfInactive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReferralId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nationality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MemberId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MemberId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MemberId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,353 @@
+﻿@model WpcabAdministration.Models.Member
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Member</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Country.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.District.NameEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.District.NameEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PoliceStation.NameEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PoliceStation.NameEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostOffice.NameEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostOffice.NameEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Village.NameEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Village.NameEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zone.NameEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zone.NameEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FormId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FormId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameBn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameBn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FatherNameEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FatherNameEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FatherNameBn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FatherNameBn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotherNameEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotherNameEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotherNameBn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotherNameBn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaritalStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaritalStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BloodGroup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BloodGroup)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Photo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Photo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SignatureImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SignatureImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MobileNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MobileNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NationalId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NationalId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfMembership)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfMembership)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDateOfAccount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDateOfAccount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EducationalQualification)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EducationalQualification)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Profession)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profession)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Experience)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Experience)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MonthlyIncome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MonthlyIncome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MonthlyExpense)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MonthlyExpense)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoOfFamilyMember)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoOfFamilyMember)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinancialStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinancialStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Relegion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Relegion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsPassed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsPassed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfPassing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfPassing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsInactive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsInactive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfInactive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfInactive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReferralId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReferralId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nationality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nationality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
