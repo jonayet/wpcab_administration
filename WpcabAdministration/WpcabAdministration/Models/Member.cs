@@ -11,7 +11,9 @@ namespace WpcabAdministration.Models
     public class Member
     {
         [Key]
-        public int MemberId { get; set; }
+        [Editable(false)]
+        [Display(Name = "ID")]
+        public int MemberId { get; private set; }
 
         [Display(Name = "Form Id")]
         public string FormId { get; set; }
@@ -26,13 +28,13 @@ namespace WpcabAdministration.Models
         [Display(Name = "Father's Name")]
         public string FatherNameEn { get; set; }
 
-        [Display(Name = "নাম")]
+        [Display(Name = "বাবা'র নাম")]
         public string FatherNameBn { get; set; }
 
         [Display(Name = "Mother's Name")]
         public string MotherNameEn { get; set; }
 
-        [Display(Name = "নাম")]
+        [Display(Name = "মা'র নাম")]
         public string MotherNameBn { get; set; }
 
         [Display(Name = "Gender")]
@@ -45,7 +47,7 @@ namespace WpcabAdministration.Models
         [Display(Name = "Spouse's Name")]
         public string SpouseNameEn { get; set; }
 
-        [Display(Name = "নাম")]
+        [Display(Name = "সহধর্মিণী'র নাম")]
         public string SpouseNameBn { get; set; }
 
         [Display(Name = "Blood Group")]
@@ -72,18 +74,22 @@ namespace WpcabAdministration.Models
         public string NationalId { get; set; }
 
         [Display(Name = "Date of Birth")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DateOfBirth { get; set; }
 
         [Display(Name = "Date of Membership")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DateOfMembership { get; set; }
 
         [Display(Name = "Start date of Account")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime StartDateOfAccount { get; set; }
 
         [NotMapped]
+        [Editable(false)]
         [Display(Name = "Age")]
         public int Age { get; set; }
 
@@ -112,17 +118,21 @@ namespace WpcabAdministration.Models
         [DisplayFormat(NullDisplayText = "Unknown")]
         public string Relegion { get; set; }
 
+        [Display(Name = "Passed")]
         public bool IsPassed { get; set; }
 
         [Display(Name = "Date of Passing")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DateOfPassing { get; set; }
 
+        [Display(Name = "Inactive")]
         public bool IsInactive { get; set; }
 
         [Display(Name = "Date from Inactive")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime DateOfInactive { get; set; }
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime DateFromInactive { get; set; }
 
         [Display(Name = "Referral")]
         public string ReferralId { get; set; }
@@ -142,7 +152,7 @@ namespace WpcabAdministration.Models
         public string VillageEn { get; set; }
 
         [NotMapped]
-        [Display(Name = "")]
+        [Display(Name = "গ্রাম")]
         public string VillageBn { get; set; }
 
         public int PostOfficeId { get; set; }
@@ -154,7 +164,7 @@ namespace WpcabAdministration.Models
         public string PostOfficeEn { get; set; }
 
         [NotMapped]
-        [Display(Name = "")]
+        [Display(Name = "পোষ্ট অফিস")]
         public string PostOfficeBn { get; set; }
 
         public int PoliceStationId { get; set; }
@@ -166,7 +176,7 @@ namespace WpcabAdministration.Models
         public string PoliceStationEn { get; set; }
 
         [NotMapped]
-        [Display(Name = "")]
+        [Display(Name = "থানা")]
         public string PoliceStationBn { get; set; }
 
         public int DistrictId { get; set; }
@@ -178,7 +188,7 @@ namespace WpcabAdministration.Models
         public string DistrictEn { get; set; }
 
         [NotMapped]
-        [Display(Name = "")]
+        [Display(Name = "জেলা")]
         public string DistrictBn { get; set; }
 
         [Display(Name = "Zone")]
