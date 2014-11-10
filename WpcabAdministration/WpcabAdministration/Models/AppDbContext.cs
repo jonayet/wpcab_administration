@@ -13,18 +13,20 @@ namespace WpcabAdministration.Models
 
         }
 
-        public System.Data.Entity.DbSet<WpcabAdministration.Models.Member> Members { get; set; }
+        public DbSet<Member> Members { get; set; }
 
-        public System.Data.Entity.DbSet<WpcabAdministration.Models.Country> Countries { get; set; }
+        public DbSet<Relative> Relatives { get; set; }
 
-        public System.Data.Entity.DbSet<WpcabAdministration.Models.District> Districts { get; set; }
+        public DbSet<Country> Countries { get; set; }
 
-        public System.Data.Entity.DbSet<WpcabAdministration.Models.PoliceStation> PoliceStations { get; set; }
+        public DbSet<District> Districts { get; set; }
 
-        public System.Data.Entity.DbSet<WpcabAdministration.Models.PostOffice> PostOffices { get; set; }
+        public DbSet<PoliceStation> PoliceStations { get; set; }
 
-        public System.Data.Entity.DbSet<WpcabAdministration.Models.Village> Villages { get; set; }
+        public DbSet<PostOffice> PostOffices { get; set; }
 
-        public System.Data.Entity.DbSet<WpcabAdministration.Models.Zone> Zones { get; set; }
+        public DbSet<Village> Villages { get; set; }
+
+        public DbSet<Zone> Zones { get; set; }
     }
 }

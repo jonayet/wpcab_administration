@@ -15,251 +15,126 @@
 
 
     <div class="container-fluid">
-        <form>
-                
-            <div class="row-fluid">
+        <form> 
+            @*<div class="row-fluid">
                 <div class="span12 bgcolor">
                     <div class="alert alert-error">
                         <a href="#" class="close" data-dismiss="alert">×</a>
                         Error Messages.
                     </div>
                 </div>
-            </div>
+            </div>*@
             
             <legend>Member</legend>
-            <div class="row-fluid">
+            @*<div class="row-fluid">*@
                 
-                @*Row 1 : Form ID, Picture*@
+                @* Row 1 : NameEn, NameBn, FatherNameEn, FatherNameBn, MemberId, Photo *@
                 <div class="row-fluid">
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.MemberId, new {@class = "control-label col-md-2"})
-                        @Html.DisplayFor(model => model.MemberId, new { htmlAttributes = new { @class = "span12" } })
-                        @Html.ValidationMessageFor(model => model.MemberId, "", new {@class = "text-danger"})
+                    @* Row 1, Col 1 : NameEn, NameBn, FatherNameEn, FatherNameBn *@
+                    <div class="span6 lightblue">
+                        <div class="lightblue">
+                            @Html.LabelFor(model => model.NameEn, new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.NameEn, new { htmlAttributes = new { @class = "span12" } })
+                            @Html.ValidationMessageFor(model => model.NameEn, "", new { @class = "text-danger" })
+                        </div>
 
-                        @Html.LabelFor(model => model.FormId, new {@class = "control-label col-md-2"})
-                        @Html.EditorFor(model => model.FormId, new {htmlAttributes = new {@class = "span12"}})
-                        @Html.ValidationMessageFor(model => model.FormId, "", new {@class = "text-danger"})
-                        
-                        @Html.Label("Blood Group", "Blood Group", new {@class = "control-label col-md-2"})
-                        @Html.DropDownList("CountryId", null, new {@class = "span12"})
-                        @Html.ValidationMessageFor(model => model.CountryId, "", new {@class = "text-danger"})
+                        <div class="lightblue">
+                            @Html.LabelFor(model => model.NameBn, new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.NameBn, new { htmlAttributes = new { @class = "span12" } })
+                            @Html.ValidationMessageFor(model => model.NameBn, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="lightblue">
+                            @Html.LabelFor(model => model.FatherNameEn, new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.FatherNameEn, new { htmlAttributes = new { @class = "span12" } })
+                            @Html.ValidationMessageFor(model => model.FatherNameEn, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="lightblue">
+                            @Html.LabelFor(model => model.FatherNameBn, new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.FatherNameBn, new { htmlAttributes = new { @class = "span12" } })
+                            @Html.ValidationMessageFor(model => model.FatherNameBn, "", new { @class = "text-danger" })
+                        </div>
                     </div>
+                    
+                    @* Row 1, Col 2 : MemberId, Photo *@
+                    <div class="span6 lightblue">
+                        <div class="lightblue">
+                            <label>ID: @Model.MemberId</label>
+                        </div>
 
-                    <div class="span5 lightblue">
-                        @*<div class="row-fluid">
-                            <div class="span5 lightblue">
-                                @Html.LabelFor(model => model.Photo, new { @class = "control-label col-md-2" })
-                                @Html.EditorFor(model => model.Photo, new { htmlAttributes = new { @class = "span12" } })
-                                @Html.ValidationMessageFor(model => model.Photo, "", new { @class = "text-danger" })
-                            </div>
-                        </div>*@
-
-                        @*@Html.LabelFor(model => model.Photo, new { @class = "control-label col-md-2" })*@
-                        <img id="PhotoView" src="#" width="200" height="200" />
+                        <img id="PhotoView" src="#" width="177" height="177" />
                         <p></p>
-                        <input type="file" name="Photo" id="Photo" />
-                    </div>
-                </div>
-
-                @*Row 2 : Name*@
-                <div class="row-fluid">
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.NameEn, new {@class = "control-label col-md-2"})
-                        @Html.EditorFor(model => model.NameEn, new {htmlAttributes = new {@class = "span12"}})
-                        @Html.ValidationMessageFor(model => model.NameEn, "", new {@class = "text-danger"})
-                    </div>
-
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.NameBn, new {@class = "control-label col-md-2"})
-                        @Html.EditorFor(model => model.NameBn, new {htmlAttributes = new {@class = "span12"}})
-                        @Html.ValidationMessageFor(model => model.NameBn, "", new {@class = "text-danger"})
-                    </div>
-                </div>
-
-                @*Row 3 : Father's Name*@
-                <div class="row-fluid">
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.FatherNameEn, new {@class = "control-label col-md-2"})
-                        @Html.EditorFor(model => model.FatherNameEn, new {htmlAttributes = new {@class = "span12"}})
-                        @Html.ValidationMessageFor(model => model.FatherNameEn, "", new {@class = "text-danger"})
-                    </div>
-
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.FatherNameBn, new {@class = "control-label col-md-2"})
-                        @Html.EditorFor(model => model.FatherNameBn, new {htmlAttributes = new {@class = "span12"}})
-                        @Html.ValidationMessageFor(model => model.FatherNameBn, "", new {@class = "text-danger"})
-                    </div>
-                </div>
-
-                @*Row 4 : Mother's Name*@
-                <div class="row-fluid">
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.MotherNameEn, new {@class = "control-label col-md-2"})
-                        @Html.EditorFor(model => model.MotherNameEn, new {htmlAttributes = new {@class = "span12"}})
-                        @Html.ValidationMessageFor(model => model.MotherNameEn, "", new {@class = "text-danger"})
-                    </div>
-
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.MotherNameBn, new {@class = "control-label col-md-2"})
-                        @Html.EditorFor(model => model.MotherNameBn, new {htmlAttributes = new {@class = "span12"}})
-                        @Html.ValidationMessageFor(model => model.MotherNameBn, "", new {@class = "text-danger"})
+                        <input type="file" name="PhotoFileName" id="PhotoFileName" />
+                        <p></p>
                     </div>
                 </div>
             
-                @*Row 5 : Gender, Marital Status, Blood Group*@
+                @* Row 2 : MotherNameEn, CareOfEn *@
                 <div class="row-fluid">
-                    <div class="span5 lightblue">
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.MotherNameEn, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.MotherNameEn, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.MotherNameEn, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.CareOfEn, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.CareOfEn, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.CareOfEn, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            
+                @* Row 3 : MotherNameBn, CareOfBn *@
+                <div class="row-fluid">
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.MotherNameBn, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.MotherNameBn, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.MotherNameBn, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.CareOfBn, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.CareOfBn, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.CareOfBn, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @* Row 4 : Gender, MaritalStatus *@
+                <div class="row-fluid">
+                    <div class="span6 lightblue">
                         @*@Html.LabelFor(model => model.Gender, new { @class = "control-label col-md-2" })*@
+                        <p></p>
                         @Html.RadioButtonFor(model => model.Gender, "Male", new { @checked = true }) Male
                         @Html.RadioButtonFor(model => model.Gender, "Female") Female
                         @Html.RadioButtonFor(model => model.Gender, "Other") Other
                         <p></p>
                     </div>
 
-                    <div class="span5 lightblue">
+                    <div class="span6 lightblue">
                         @*@Html.LabelFor(model => model.MaritalStatus, new { @class = "control-label col-md-2" })*@
-                        @Html.RadioButtonFor(model => model.MaritalStatus, "Married", new { @id = "MaritalStatus_Married"}) Married
+                        <p></p>
+                        @Html.RadioButtonFor(model => model.MaritalStatus, "Married", new { @id = "MaritalStatus_Married" }) Married
                         @Html.RadioButtonFor(model => model.MaritalStatus, "Unmarried", new { @id = "MaritalStatus_Unmarried", @checked = true }) Unmarried
-                        @Html.RadioButtonFor(model => model.MaritalStatus, "Unknown", new { @id = "MaritalStatus_Unknown"}) Unknown
+                        @Html.RadioButtonFor(model => model.MaritalStatus, "Unknown", new { @id = "MaritalStatus_Unknown" }) Unknown
                         <p></p>
                     </div>
                 </div>
             
-                @*Row 4 : Spouse's Name*@
-                <div id="SpouseName_div" class="row-fluid">
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.SpouseNameEn, new { @class = "control-label col-md-2" })
-                        @Html.EditorFor(model => model.SpouseNameEn, new { htmlAttributes = new { @class = "span12", @width = "100" } })
-                        @Html.ValidationMessageFor(model => model.SpouseNameEn, "", new { @class = "text-danger" })
+                @* Row 5 : DateOfBirth, Age, IsPassed, DateOfPassing *@
+                <div class="row-fluid">
+                    <div class="span2 lightblue">
+                        @Html.LabelFor(model => model.BloodGroup, new { @class = "control-label col-md-2" })
+                        @Html.DropDownList("BloodGroup", null, new { @class = "span12" })
+                        @Html.ValidationMessageFor(model => model.BloodGroup, "", new { @class = "text-danger" })
                     </div>
 
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.SpouseNameBn, new { @class = "control-label col-md-2" })
-                        @Html.EditorFor(model => model.SpouseNameBn, new { htmlAttributes = new { @class = "span12" } })
-                        @Html.ValidationMessageFor(model => model.SpouseNameBn, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            
-                @*Row 4 : Care Of*@
-                <div id="SpouseName_div" class="row-fluid">
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.CareOfEn, new { @class = "control-label col-md-2" })
-                        @Html.EditorFor(model => model.CareOfEn, new { htmlAttributes = new { @class = "span12", @width = "100" } })
-                        @Html.ValidationMessageFor(model => model.CareOfEn, "", new { @class = "text-danger" })
-                    </div>
-
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.CareOfBn, new { @class = "control-label col-md-2" })
-                        @Html.EditorFor(model => model.CareOfBn, new { htmlAttributes = new { @class = "span12" } })
-                        @Html.ValidationMessageFor(model => model.CareOfBn, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            
-                @*Row 4 : Pressent Address, Phone, Mobile, Email*@
-                <div class="row-fluid">
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.PresentAddress, new { @class = "control-label col-md-2" })
-                        @Html.TextAreaFor(model => model.PresentAddress, new { @class = "span12", @cols = 160, @rows = 8 })
-                        @Html.ValidationMessageFor(model => model.PresentAddress, "", new { @class = "text-danger" })
-                    </div>
-                    
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.Phone, new { @class = "control-label col-md-2" })
-                        @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "span12" } })
-                        @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
-                    </div>
-
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.Mobile, new { @class = "control-label col-md-2" })
-                        @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "span12" } })
-                        @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
-                    </div>
-                    
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
-                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "span12" } })
-                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            
-                @*Row 4 : Village*@
-                <div class="row-fluid">
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.VillageEn, new { @class = "control-label col-md-2" })
-                        @Html.EditorFor(model => model.VillageEn, new { htmlAttributes = new { @class = "span12" } })
-                        @Html.ValidationMessageFor(model => model.VillageEn, "", new { @class = "text-danger" })
-                    </div>
-
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.VillageBn, new { @class = "control-label col-md-2" })
-                        @Html.EditorFor(model => model.VillageBn, new { htmlAttributes = new { @class = "span12" } })
-                        @Html.ValidationMessageFor(model => model.VillageBn, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            
-                @*Row 4 : Police Station*@
-                <div class="row-fluid">
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.PoliceStationEn, new { @class = "control-label col-md-2" })
-                        @Html.EditorFor(model => model.PoliceStationEn, new { htmlAttributes = new { @class = "span12" } })
-                        @Html.ValidationMessageFor(model => model.PoliceStationEn, "", new { @class = "text-danger" })
-                    </div>
-
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.PoliceStationBn, new { @class = "control-label col-md-2" })
-                        @Html.EditorFor(model => model.PoliceStationBn, new { htmlAttributes = new { @class = "span12" } })
-                        @Html.ValidationMessageFor(model => model.PoliceStationBn, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            
-                @*Row 4 : Post Office*@
-                <div class="row-fluid">
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.PostOfficeEn, new { @class = "control-label col-md-2" })
-                        @Html.EditorFor(model => model.PostOfficeEn, new { htmlAttributes = new { @class = "span12" } })
-                        @Html.ValidationMessageFor(model => model.PostOfficeEn, "", new { @class = "text-danger" })
-                    </div>
-
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.PostOfficeBn, new { @class = "control-label col-md-2" })
-                        @Html.EditorFor(model => model.PostOfficeBn, new { htmlAttributes = new { @class = "span12" } })
-                        @Html.ValidationMessageFor(model => model.PostOfficeBn, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            
-                @*Row 4 : District*@
-                <div class="row-fluid">
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.DistrictEn, new { @class = "control-label col-md-2" })
-                        @Html.EditorFor(model => model.DistrictEn, new { htmlAttributes = new { @class = "span12" } })
-                        @Html.ValidationMessageFor(model => model.DistrictEn, "", new { @class = "text-danger" })
-                    </div>
-
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.DistrictBn, new { @class = "control-label col-md-2" })
-                        @Html.EditorFor(model => model.DistrictBn, new { htmlAttributes = new { @class = "span12" } })
-                        @Html.ValidationMessageFor(model => model.DistrictBn, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            
-                @*Row 7 : Email, NationalId*@
-                <div class="row-fluid">
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.NationalId, new {@class = "control-label col-md-2"})
-                        @Html.EditorFor(model => model.NationalId, new {htmlAttributes = new {@class = "span12"}})
-                        @Html.ValidationMessageFor(model => model.NationalId, "", new {@class = "text-danger"})
-                    </div>
-                </div>
-            
- 
-                @* Row 8 : DateOfBirth, Age, IsPassed, DateOfPassing *@
-                <div class="row-fluid">
-                    <div class="span4 lightblue">
+                    <div class="span3 lightblue">
                         @Html.LabelFor(model => model.DateOfBirth, new { @class = "control-label col-md-2" })
                         @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "span12" } })
                         @Html.ValidationMessageFor(model => model.DateOfBirth, "", new { @class = "text-danger" })
                     </div>
-                
+
                     <div class="span1 lightblue">
                         @Html.LabelFor(model => model.Age, new { @class = "control-label col-md-2" })
                         @Html.DisplayFor(model => model.Age, new { htmlAttributes = new { @class = "span12" } })
@@ -274,21 +149,143 @@
                         </div>
                     </div>
 
-                    <div id="DateOfPassing_div" class="span4 lightblue">
+                    <div id="DateOfPassing_div" class="span5 lightblue">
                         @Html.LabelFor(model => model.DateOfPassing, new { @class = "control-label col-md-2" })
                         @Html.EditorFor(model => model.DateOfPassing, new { htmlAttributes = new { @class = "span12" } })
                         @Html.ValidationMessageFor(model => model.DateOfPassing, "", new { @class = "text-danger" })
                     </div>
                 </div>
             
+                @* Row 6 : Spouse's Name *@
+                <div id="SpouseName_div" class="row-fluid">
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.SpouseNameEn, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.SpouseNameEn, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.SpouseNameEn, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.SpouseNameBn, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.SpouseNameBn, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.SpouseNameBn, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            
+                @* Row 7 : NationalId, Relatives *@
+                <div class="row-fluid">
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.NationalId, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.NationalId, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.NationalId, "", new { @class = "text-danger" })
+                    </div>
+                    
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.Relatives, "Relatives", new { @class = "control-label col-md-2" })
+                        @Html.DropDownList("Relatives", null, new { @class = "span12" })
+                        @Html.ValidationMessageFor(model => model.CountryId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            
+                @* Row 8 : Pressent Address, Phone, Mobile, Email *@
+                <div class="row-fluid">
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.PresentAddress, new { @class = "control-label col-md-2" })
+                        @Html.TextAreaFor(model => model.PresentAddress, new { @class = "span12", @cols = 160, @rows = 8 })
+                        @Html.ValidationMessageFor(model => model.PresentAddress, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.Phone, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.Mobile, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @* Row 9 : Village *@
+                <div class="row-fluid">
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.VillageEn, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.VillageEn, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.VillageEn, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.VillageBn, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.VillageBn, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.VillageBn, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            
+                @* Row 10 : Post Office *@
+                <div class="row-fluid">
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.PostOfficeEn, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.PostOfficeEn, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.PostOfficeEn, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.PostOfficeBn, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.PostOfficeBn, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.PostOfficeBn, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            
+                @* Row 11 : Police Station *@
+                <div class="row-fluid">
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.PoliceStationEn, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.PoliceStationEn, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.PoliceStationEn, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.PoliceStationBn, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.PoliceStationBn, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.PoliceStationBn, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @*Row 12 : District*@
+                <div class="row-fluid">
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.DistrictEn, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.DistrictEn, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.DistrictEn, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.DistrictBn, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.DistrictBn, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.DistrictBn, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                
+
+
+               
+
                 @*Row 8 : DateOfMembership, IsInactive, DateFromInactive*@
                 <div class="row-fluid">
-                    <div class="span5 lightblue">
+                    <div class="span6 lightblue">
                         @Html.LabelFor(model => model.DateOfMembership, new { @class = "control-label col-md-2" })
                         @Html.EditorFor(model => model.DateOfMembership, new { htmlAttributes = new { @class = "span12" } })
                         @Html.ValidationMessageFor(model => model.DateOfMembership, "", new { @class = "text-danger" })
                     </div>
-                    
+
                     <div class="span1 lightblue">
                         @Html.LabelFor(model => model.IsInactive, new { @class = "control-label col-md-2" })
                         <div class="checkbox">
@@ -303,144 +300,138 @@
                         @Html.ValidationMessageFor(model => model.DateFromInactive, "", new { @class = "text-danger" })
                     </div>
                 </div>
-            
+
                 @*Row 9 : StartDateOfAccount, EducationalQualification*@
                 <div class="row-fluid">
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.StartDateOfAccount, new {@class = "control-label col-md-2"})
-                        @Html.EditorFor(model => model.StartDateOfAccount, new {htmlAttributes = new {@class = "span12"}})
-                        @Html.ValidationMessageFor(model => model.StartDateOfAccount, "", new {@class = "text-danger"})
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.StartDateOfAccount, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.StartDateOfAccount, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.StartDateOfAccount, "", new { @class = "text-danger" })
                     </div>
-                    
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.EducationalQualification, new {@class = "control-label col-md-2"})
-                        @Html.EditorFor(model => model.EducationalQualification, new {htmlAttributes = new {@class = "span12"}})
-                        @Html.ValidationMessageFor(model => model.EducationalQualification, "", new {@class = "text-danger"})
-                    </div>
-                </div>
-            
-                @*Row 10 : Profession, Experience*@
-                <div class="row-fluid">
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.Profession, new {@class = "control-label col-md-2"})
-                        @Html.EditorFor(model => model.Profession, new {htmlAttributes = new {@class = "span12"}})
-                        @Html.ValidationMessageFor(model => model.Profession, "", new {@class = "text-danger"})
-                    </div>
-                    
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.Experience, new {@class = "control-label col-md-2"})
-                        @Html.EditorFor(model => model.Experience, new {htmlAttributes = new {@class = "span12"}})
-                        @Html.ValidationMessageFor(model => model.Experience, "", new {@class = "text-danger"})
-                    </div>
-                </div>
-            
-                @*Row 11 : MonthlyIncome, MonthlyExpense*@
-                <div class="row-fluid">
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.MonthlyIncome, new {@class = "control-label col-md-2"})
-                        @Html.EditorFor(model => model.MonthlyIncome, new {htmlAttributes = new {@class = "span12"}})
-                        @Html.ValidationMessageFor(model => model.MonthlyIncome, "", new {@class = "text-danger"})
-                    </div>
-                    
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.MonthlyExpense, new {@class = "control-label col-md-2"})
-                        @Html.EditorFor(model => model.MonthlyExpense, new {htmlAttributes = new {@class = "span12"}})
-                        @Html.ValidationMessageFor(model => model.MonthlyExpense, "", new {@class = "text-danger"})
+
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.EducationalQualification, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.EducationalQualification, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.EducationalQualification, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
-            
+                @*Row 10 : Profession, Experience*@
+                <div class="row-fluid">
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.Profession, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.Profession, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.Profession, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.Experience, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.Experience, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.Experience, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @*Row 11 : MonthlyIncome, MonthlyExpense*@
+                <div class="row-fluid">
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.MonthlyIncome, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.MonthlyIncome, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.MonthlyIncome, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.MonthlyExpense, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.MonthlyExpense, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.MonthlyExpense, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
                 @*Row 12 : NoOfFamilyMember, FinancialStatus*@
                 <div class="row-fluid">
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.NoOfFamilyMember, new {@class = "control-label col-md-2"})
-                        @Html.EditorFor(model => model.NoOfFamilyMember, new {htmlAttributes = new {@class = "span12"}})
-                        @Html.ValidationMessageFor(model => model.NoOfFamilyMember, "", new {@class = "text-danger"})
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.NoOfFamilyMembers, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.NoOfFamilyMembers, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.NoOfFamilyMembers, "", new { @class = "text-danger" })
                     </div>
-                    
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.FinancialStatus, new {@class = "control-label col-md-2"})
-                        @Html.EditorFor(model => model.FinancialStatus, new {htmlAttributes = new {@class = "span12"}})
-                        @Html.ValidationMessageFor(model => model.FinancialStatus, "", new {@class = "text-danger"})
+
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.FinancialStatus, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.FinancialStatus, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.FinancialStatus, "", new { @class = "text-danger" })
                     </div>
                 </div>
-            
+
                 @*Row 13 : Relegion*@
                 <div class="row-fluid">
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.Relegion, new {@class = "control-label col-md-2"})
-                        @Html.EditorFor(model => model.Relegion, new {htmlAttributes = new {@class = "span12"}})
-                        @Html.ValidationMessageFor(model => model.Relegion, "", new {@class = "text-danger"})
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.Relegion, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.Relegion, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.Relegion, "", new { @class = "text-danger" })
                     </div>
                 </div>
-            
+
                 @*Row 15 : , ReferralId*@
                 <div class="row-fluid">
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.ReferralId, new {@class = "control-label col-md-2"})
-                        @Html.EditorFor(model => model.ReferralId, new {htmlAttributes = new {@class = "span12"}})
-                        @Html.ValidationMessageFor(model => model.ReferralId, "", new {@class = "text-danger"})
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.ReferralId, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.ReferralId, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.ReferralId, "", new { @class = "text-danger" })
                     </div>
                 </div>
-            
+
                 @*Row 18 : ZoneId*@
                 <div class="row-fluid">
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.ZoneId, "ZoneId", new {@class = "control-label col-md-2"})
-                        @Html.DropDownList("ZoneId", null, new {@class = "span12"})
-                        @Html.ValidationMessageFor(model => model.ZoneId, "", new {@class = "text-danger"})
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.ZoneId, "ZoneId", new { @class = "control-label col-md-2" })
+                        @Html.DropDownList("ZoneId", null, new { @class = "span12" })
+                        @Html.ValidationMessageFor(model => model.ZoneId, "", new { @class = "text-danger" })
                     </div>
                 </div>
-            
+
                 @*Row 19 : CountryId, Nationality*@
-                <div class="row-fluid">                  
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.CountryId, "CountryId", new {@class = "control-label col-md-2"})
-                        @Html.DropDownList("CountryId", null, new {@class = "span12"})
-                        @Html.ValidationMessageFor(model => model.CountryId, "", new {@class = "text-danger"})
-                    </div>
-                    
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.Nationality, new {@class = "control-label col-md-2"})
-                        @Html.EditorFor(model => model.Nationality, new {htmlAttributes = new {@class = "span12"}})
-                        @Html.ValidationMessageFor(model => model.Nationality, "", new {@class = "text-danger"})
+                <div class="row-fluid">
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.Nationality, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.Nationality, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.Nationality, "", new { @class = "text-danger" })
                     </div>
                 </div>
-            
+
                 @*Row 20 : UserName, Password*@
                 <div class="row-fluid">
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.UserName, new {@class = "control-label col-md-2"})
-                        @Html.EditorFor(model => model.UserName, new {htmlAttributes = new {@class = "span12"}})
-                        @Html.ValidationMessageFor(model => model.UserName, "", new {@class = "text-danger"})
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.UserName, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
                     </div>
-                    
-                    <div class="span5 lightblue">
-                        @Html.LabelFor(model => model.Password, new {@class = "control-label col-md-2"})
-                        @Html.EditorFor(model => model.Password, new {htmlAttributes = new {@class = "span12"}})
-                        @Html.ValidationMessageFor(model => model.Password, "", new {@class = "text-danger"})
+
+                    <div class="span6 lightblue">
+                        @Html.LabelFor(model => model.PasswordHash, new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.PasswordHash, new { htmlAttributes = new { @class = "span12" } })
+                        @Html.ValidationMessageFor(model => model.PasswordHash, "", new { @class = "text-danger" })
                     </div>
                 </div>
-            
+
                 @*Row 20 : SignatureImage*@
                 <div class="row-fluid">
                     <img id="SignatureView" src="#" width="200" height="80" class="img-thumbnail" />
                     <p></p>
-                    <input type="file" name="SignatureImage" id="SignatureImage" />
+                    <input type="file" name="SignatureFileName" id="SignatureFileName" />
 
-                    @*<div class="span5 lightblue">
-                        @Html.LabelFor(model => model.SignatureImage, new { @class = "control-label col-md-2" })
-                        @Html.EditorFor(model => model.SignatureImage, new { htmlAttributes = new { @class = "span12" } })
-                        @Html.ValidationMessageFor(model => model.SignatureImage, "", new { @class = "text-danger" })
-                    </div>*@
+                    @*<div class="span6 lightblue">
+                    @Html.LabelFor(model => model.SignatureImage, new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.SignatureImage, new { htmlAttributes = new { @class = "span12" } })
+                    @Html.ValidationMessageFor(model => model.SignatureImage, "", new { @class = "text-danger" })
+                </div>*@
                 </div>
 
-            </div><!--/row-->
+            @*</div>*@
         </form>
     </div>
 
     <div class="row-fluid">
-        <div class="col-md-offset-2 span5 lightblue">
+        <div class="col-md-offset-2 span6 lightblue">
             <input type="submit" value="Create" class="btn btn-default" />
         </div>
     </div>
@@ -567,13 +558,13 @@
         /**************** Common functions ****************/
 
         /**************** Photo & PhotoView ****************/
-        $("#Photo").change(function () {
+        $("#PhotoFileName").change(function () {
             loadImage(this, $('#PhotoView'));
         });
         /**************** Photo & PhotoView ****************/
 
         /**************** SignatureImage & SignatureView ****************/
-        $("#SignatureImage").change(function () {
+        $("#SignatureFileName").change(function () {
             loadImage(this, $('#SignatureView'));
         });
         /**************** Inactive checkbox ****************/

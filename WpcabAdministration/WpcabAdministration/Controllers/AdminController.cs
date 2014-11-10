@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -13,6 +14,12 @@ namespace WpcabAdministration.Controllers
     public class AdminController : Controller
     {
         private AppDbContext db = new AppDbContext();
+        private List<string> _bloodGroups;
+
+        public AdminController()
+        {
+            _bloodGroups = new List<string>{"A+", "B+", "AB+"};
+        }
 
         // GET: Admin
         public ActionResult Index()
@@ -45,6 +52,8 @@ namespace WpcabAdministration.Controllers
             ViewBag.PostOfficeId = new SelectList(db.PostOffices, "PostOfficeId", "NameEn");
             ViewBag.VillageId = new SelectList(db.Villages, "VillageId", "NameEn");
             ViewBag.ZoneId = new SelectList(db.Zones, "ZoneId", "NameEn");
+            ViewBag.BloodGroup = new SelectList(_bloodGroups, "BloodGroup");
+            ViewBag.Relatives = new SelectList(db.Relatives, "Relatives", "NameBn");
             Member aMember = new Member()
             {
                 MemberId = 1,
@@ -65,6 +74,7 @@ namespace WpcabAdministration.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.BloodGroup = new SelectList(_bloodGroups, "BloodGroup");
             ViewBag.CountryId = new SelectList(db.Countries, "CountryId", "Name", member.CountryId);
             ViewBag.ZoneId = new SelectList(db.Zones, "ZoneId", "NameEn", member.ZoneId);
             return View(member);

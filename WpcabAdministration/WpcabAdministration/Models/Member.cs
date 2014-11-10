@@ -15,11 +15,9 @@ namespace WpcabAdministration.Models
         [Display(Name = "ID")]
         public int MemberId { get; set; }
 
-        [Display(Name = "Form Id")]
-        public string FormId { get; set; }
-
         public string PhotoFileName { get; set; }
 
+        #region Personal Information
         [Required]
         [Display(Name = "Name")]
         public string NameEn { get; set; }
@@ -57,6 +55,35 @@ namespace WpcabAdministration.Models
         [Display(Name = "প্রযত্নে")]
         public string CareOfBn { get; set; }
 
+        [Display(Name = "Blood Group")]
+        //[DisplayFormat(NullDisplayText = "Unknown")]
+        public string BloodGroup { get; set; }
+
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Date of Birth")]
+        public DateTime DateOfBirth { get; set; }
+
+        [Editable(false)]
+        [Display(Name = "Age")]
+        public int Age { get; set; }
+
+        [Display(Name = "Passed")]
+        public bool IsPassed { get; set; }
+
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Date of Passing")]
+        public DateTime DateOfPassing { get; set; }
+
+        [Display(Name = "National ID")]
+        public string NationalId { get; set; }
+
+        [Display(Name = "Relatives")]
+        public List<Relative> Relatives { get; set; }
+        #endregion
+
+        #region Contacts
         [Display(Name = "Present Address")]
         [DataType(DataType.MultilineText)]
         public string PresentAddress { get; set; }
@@ -71,37 +98,10 @@ namespace WpcabAdministration.Models
 
         [Display(Name = "Email Address")]
         [EmailAddress(ErrorMessage = "Please enter a valid email address.")]
-        public string Email { get; set; }
+        public string Email { get; set; } 
+        #endregion
 
-        [Display(Name = "Blood Group")]
-        //[DisplayFormat(NullDisplayText = "Unknown")]
-        public string BloodGroup { get; set; }
-
-        //[DataType(DataType.Date)]
-        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        [Display(Name = "Date of Birth")]
-        public DateTime DateOfBirth { get; set; }
-
-        [Display(Name = "Passed")]
-        public bool IsPassed { get; set; }
-
-        //[DataType(DataType.Date)]
-        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        [Display(Name = "Date of Passing")]
-        public DateTime DateOfPassing { get; set; }
-
-        [Editable(false)]
-        [Display(Name = "Age")]
-        public int Age { get; set; }
-
-        [Display(Name = "Referral")]
-        public string ReferralName { get; set; }
-        public string ReferralId { get; set; }
-
-        [Display(Name = "Zone")]
-        public int ZoneId { get; set; }
-        public virtual Zone Zone { get; set; }
-
+        #region Present Address
         [Display(Name = "Village")]
         public string VillageEn { get; set; }
 
@@ -128,18 +128,17 @@ namespace WpcabAdministration.Models
 
         [Display(Name = "Country")]
         public int CountryId { get; set; }
-        public virtual Country Country { get; set; }
+        public virtual Country Country { get; set; } 
+        #endregion
 
-        [Display(Name = "National ID")]
-        public string NationalId { get; set; }
+        #region Membership Information
+        [Display(Name = "Form Id")]
+        public string FormId { get; set; }
 
         //[DataType(DataType.Date)]
         //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Date of Membership")]
         public DateTime DateOfMembership { get; set; }
-
-        [Display(Name = "Relatives")]
-        public virtual ICollection<Member> Relatives { get; set; }
 
         [Display(Name = "Inactive")]
         public bool IsInactive { get; set; }
@@ -149,6 +148,21 @@ namespace WpcabAdministration.Models
         [Display(Name = "Date from Inactive")]
         public DateTime DateFromInactive { get; set; }
 
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Start date of Account")]
+        public DateTime StartDateOfAccount { get; set; }
+
+        [Display(Name = "Referral")]
+        public string ReferralName { get; set; }
+        public string ReferralId { get; set; }
+
+        [Display(Name = "Zone")]
+        public int ZoneId { get; set; }
+        public virtual Zone Zone { get; set; }
+        #endregion
+
+        #region Misc Information
         [Display(Name = "Educational Qualification")]
         public string EducationalQualification { get; set; }
 
@@ -177,13 +191,10 @@ namespace WpcabAdministration.Models
         public int NoOfFamilyMembers { get; set; }
 
         [Display(Name = "Financial Status")]
-        public int FinancialStatus { get; set; }
+        public int FinancialStatus { get; set; } 
+        #endregion
 
-        //[DataType(DataType.Date)]
-        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        [Display(Name = "Start date of Account")]
-        public DateTime StartDateOfAccount { get; set; }
-
+        #region Online Account Info
         [Display(Name = "User Name")]
         [Required(ErrorMessage = "required")]
         [MinLength(4, ErrorMessage = "Min: 4")]
@@ -194,11 +205,20 @@ namespace WpcabAdministration.Models
         [Required(ErrorMessage = "required")]
         [MinLength(4, ErrorMessage = "Min: 4")]
         [MaxLength(8, ErrorMessage = "Max: 8")]
-        public string Password { get; set; }
+        public string PasswordHash { get; set; } 
+        #endregion
 
-        public string SignatureFilePath { get; set; }
+        #region Application Internal Information
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime LastDateOfTransaction { get; set; }
 
-        //[Editable(false)]
+        public string LastUpdateBy { get; set; }
+        public int LastUpdateById { get; set; } 
+        #endregion
+
+        public string SignatureFileName { get; set; }
+
         //[NotMapped]
     }
 }
