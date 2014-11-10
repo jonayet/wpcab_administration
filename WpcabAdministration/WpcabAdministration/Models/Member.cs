@@ -13,10 +13,12 @@ namespace WpcabAdministration.Models
         [Key]
         [Editable(false)]
         [Display(Name = "ID")]
-        public int MemberId { get; private set; }
+        public int MemberId { get; set; }
 
         [Display(Name = "Form Id")]
         public string FormId { get; set; }
+
+        public string PhotoFileName { get; set; }
 
         [Required]
         [Display(Name = "Name")]
@@ -41,7 +43,6 @@ namespace WpcabAdministration.Models
         public string Gender { get; set; }
 
         [Display(Name = "Marital Status")]
-        [DisplayFormat(NullDisplayText = "Unknown")]
         public string MaritalStatus { get; set; }
 
         [Display(Name = "Spouse's Name")]
@@ -50,51 +51,115 @@ namespace WpcabAdministration.Models
         [Display(Name = "সহধর্মিণী'র নাম")]
         public string SpouseNameBn { get; set; }
 
-        [Display(Name = "Blood Group")]
-        [DisplayFormat(NullDisplayText = "Unknown")]
-        public string BloodGroup { get; set; }
+        [Display(Name = "Care Of")]
+        public string CareOfEn { get; set; }
 
-        public string Photo { get; set; }
+        [Display(Name = "প্রযত্নে")]
+        public string CareOfBn { get; set; }
 
-        public string SignatureImage { get; set; }
+        [Display(Name = "Present Address")]
+        [DataType(DataType.MultilineText)]
+        public string PresentAddress { get; set; }
 
         [Display(Name = "Phone Number")]
         [Phone(ErrorMessage = "Please enter a valid phone number.")]
-        public string PhoneNumber { get; set; }
+        public string Phone { get; set; }
 
         [Display(Name = "Mobile Number")]
         [Phone(ErrorMessage = "Please enter a valid mobile number.")]
-        public string MobileNumber { get; set; }
+        public string Mobile { get; set; }
 
         [Display(Name = "Email Address")]
         [EmailAddress(ErrorMessage = "Please enter a valid email address.")]
         public string Email { get; set; }
 
-        [Display(Name = "National ID")]
-        public string NationalId { get; set; }
+        [Display(Name = "Blood Group")]
+        //[DisplayFormat(NullDisplayText = "Unknown")]
+        public string BloodGroup { get; set; }
 
-        [Display(Name = "Date of Birth")]
         //[DataType(DataType.Date)]
         //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Date of Birth")]
         public DateTime DateOfBirth { get; set; }
 
-        [Display(Name = "Date of Membership")]
+        [Display(Name = "Passed")]
+        public bool IsPassed { get; set; }
+
         //[DataType(DataType.Date)]
         //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime DateOfMembership { get; set; }
+        [Display(Name = "Date of Passing")]
+        public DateTime DateOfPassing { get; set; }
 
-        [Display(Name = "Start date of Account")]
-        //[DataType(DataType.Date)]
-        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime StartDateOfAccount { get; set; }
-
-        [NotMapped]
         [Editable(false)]
         [Display(Name = "Age")]
         public int Age { get; set; }
 
+        [Display(Name = "Referral")]
+        public string ReferralName { get; set; }
+        public string ReferralId { get; set; }
+
+        [Display(Name = "Zone")]
+        public int ZoneId { get; set; }
+        public virtual Zone Zone { get; set; }
+
+        [Display(Name = "Village")]
+        public string VillageEn { get; set; }
+
+        [Display(Name = "গ্রাম")]
+        public string VillageBn { get; set; }
+
+        [Display(Name = "Post Office")]
+        public string PostOfficeEn { get; set; }
+
+        [Display(Name = "পোষ্ট অফিস")]
+        public string PostOfficeBn { get; set; }
+
+        [Display(Name = "Police Station")]
+        public string PoliceStationEn { get; set; }
+
+        [Display(Name = "থানা")]
+        public string PoliceStationBn { get; set; }
+
+        [Display(Name = "District")]
+        public string DistrictEn { get; set; }
+
+        [Display(Name = "জেলা")]
+        public string DistrictBn { get; set; }
+
+        [Display(Name = "Country")]
+        public int CountryId { get; set; }
+        public virtual Country Country { get; set; }
+
+        [Display(Name = "National ID")]
+        public string NationalId { get; set; }
+
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Date of Membership")]
+        public DateTime DateOfMembership { get; set; }
+
+        [Display(Name = "Relatives")]
+        public virtual ICollection<Member> Relatives { get; set; }
+
+        [Display(Name = "Inactive")]
+        public bool IsInactive { get; set; }
+
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Date from Inactive")]
+        public DateTime DateFromInactive { get; set; }
+
         [Display(Name = "Educational Qualification")]
         public string EducationalQualification { get; set; }
+
+        [Display(Name = "Relegion")]
+        public string Relegion { get; set; }
+
+        [Display(Name = "Sub Relegion")]
+        public string SubRelegion { get; set; }
+
+        [Display(Name = "Nationality")]
+        public string Nationality { get; set; }
 
         [Display(Name = "Profession")]
         public string Profession { get; set; }
@@ -108,102 +173,16 @@ namespace WpcabAdministration.Models
         [Display(Name = "Monthly Expense")]
         public int MonthlyExpense { get; set; }
 
-        [Display(Name = "Number of Family Member")]
-        public int NoOfFamilyMember { get; set; }
+        [Display(Name = "Number of dependent Family Members")]
+        public int NoOfFamilyMembers { get; set; }
 
         [Display(Name = "Financial Status")]
         public int FinancialStatus { get; set; }
 
-        [Display(Name = "Relegion")]
-        [DisplayFormat(NullDisplayText = "Unknown")]
-        public string Relegion { get; set; }
-
-        [Display(Name = "Passed")]
-        public bool IsPassed { get; set; }
-
-        [Display(Name = "Date of Passing")]
         //[DataType(DataType.Date)]
         //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime DateOfPassing { get; set; }
-
-        [Display(Name = "Inactive")]
-        public bool IsInactive { get; set; }
-
-        [Display(Name = "Date from Inactive")]
-        //[DataType(DataType.Date)]
-        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime DateFromInactive { get; set; }
-
-        [Display(Name = "Referral")]
-        public string ReferralId { get; set; }
-
-        public virtual Member Referral { get; set; }
-
-        [Display(Name = "Relatives")]
-        [DisplayFormat(NullDisplayText = "N/A")]
-        public virtual ICollection<Member> Relatives { get; set; }
-
-        public int VillageId { get; set; }
-
-        public virtual Village Village { get; set; }
-
-        [NotMapped]
-        [Display(Name = "Village")]
-        public string VillageEn { get; set; }
-
-        [NotMapped]
-        [Display(Name = "গ্রাম")]
-        public string VillageBn { get; set; }
-
-        public int PostOfficeId { get; set; }
-
-        public virtual PostOffice PostOffice { get; set; }
-
-        [NotMapped]
-        [Display(Name = "Post Office")]
-        public string PostOfficeEn { get; set; }
-
-        [NotMapped]
-        [Display(Name = "পোষ্ট অফিস")]
-        public string PostOfficeBn { get; set; }
-
-        public int PoliceStationId { get; set; }
-
-        public virtual PoliceStation PoliceStation { get; set; }
-
-        [NotMapped]
-        [Display(Name = "Police Station")]
-        public string PoliceStationEn { get; set; }
-
-        [NotMapped]
-        [Display(Name = "থানা")]
-        public string PoliceStationBn { get; set; }
-
-        public int DistrictId { get; set; }
-
-        public virtual District District { get; set; }
-
-        [NotMapped]
-        [Display(Name = "District")]
-        public string DistrictEn { get; set; }
-
-        [NotMapped]
-        [Display(Name = "জেলা")]
-        public string DistrictBn { get; set; }
-
-        [Display(Name = "Zone")]
-        public int ZoneId { get; set; }
-
-        public virtual Zone Zone { get; set; }
-
-        [Display(Name = "Country")]
-        public int CountryId { get; set; }
-
-        [Display(Name = "Nationality")]
-        [DisplayFormat(NullDisplayText = "Unknown")]
-        public string Nationality { get; set; }
-
-        public virtual Country Country { get; set; }
+        [Display(Name = "Start date of Account")]
+        public DateTime StartDateOfAccount { get; set; }
 
         [Display(Name = "User Name")]
         [Required(ErrorMessage = "required")]
@@ -217,7 +196,7 @@ namespace WpcabAdministration.Models
         [MaxLength(8, ErrorMessage = "Max: 8")]
         public string Password { get; set; }
 
-        
+        public string SignatureFilePath { get; set; }
 
         //[Editable(false)]
         //[NotMapped]

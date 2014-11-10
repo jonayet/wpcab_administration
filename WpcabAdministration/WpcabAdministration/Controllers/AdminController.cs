@@ -17,7 +17,7 @@ namespace WpcabAdministration.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-            var members = db.Members.Include(m => m.Country).Include(m => m.District).Include(m => m.PoliceStation).Include(m => m.PostOffice).Include(m => m.Village).Include(m => m.Zone);
+            var members = db.Members.Include(m => m.Country).Include(m => m.Zone);
             return View(members.ToList());
         }
 
@@ -45,7 +45,12 @@ namespace WpcabAdministration.Controllers
             ViewBag.PostOfficeId = new SelectList(db.PostOffices, "PostOfficeId", "NameEn");
             ViewBag.VillageId = new SelectList(db.Villages, "VillageId", "NameEn");
             ViewBag.ZoneId = new SelectList(db.Zones, "ZoneId", "NameEn");
-            return View();
+            Member aMember = new Member()
+            {
+                MemberId = 1,
+                Age = 25
+            };
+            return View(aMember);
         }
 
         // POST: Admin/Create
@@ -61,10 +66,6 @@ namespace WpcabAdministration.Controllers
             }
 
             ViewBag.CountryId = new SelectList(db.Countries, "CountryId", "Name", member.CountryId);
-            ViewBag.DistrictId = new SelectList(db.Districts, "DistrictId", "NameEn", member.DistrictId);
-            ViewBag.PoliceStationId = new SelectList(db.PoliceStations, "PoliceStationId", "NameEn", member.PoliceStationId);
-            ViewBag.PostOfficeId = new SelectList(db.PostOffices, "PostOfficeId", "NameEn", member.PostOfficeId);
-            ViewBag.VillageId = new SelectList(db.Villages, "VillageId", "NameEn", member.VillageId);
             ViewBag.ZoneId = new SelectList(db.Zones, "ZoneId", "NameEn", member.ZoneId);
             return View(member);
         }
@@ -82,10 +83,6 @@ namespace WpcabAdministration.Controllers
                 return HttpNotFound();
             }
             ViewBag.CountryId = new SelectList(db.Countries, "CountryId", "Name", member.CountryId);
-            ViewBag.DistrictId = new SelectList(db.Districts, "DistrictId", "NameEn", member.DistrictId);
-            ViewBag.PoliceStationId = new SelectList(db.PoliceStations, "PoliceStationId", "NameEn", member.PoliceStationId);
-            ViewBag.PostOfficeId = new SelectList(db.PostOffices, "PostOfficeId", "NameEn", member.PostOfficeId);
-            ViewBag.VillageId = new SelectList(db.Villages, "VillageId", "NameEn", member.VillageId);
             ViewBag.ZoneId = new SelectList(db.Zones, "ZoneId", "NameEn", member.ZoneId);
             return View(member);
         }
@@ -102,10 +99,6 @@ namespace WpcabAdministration.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.CountryId = new SelectList(db.Countries, "CountryId", "Name", member.CountryId);
-            ViewBag.DistrictId = new SelectList(db.Districts, "DistrictId", "NameEn", member.DistrictId);
-            ViewBag.PoliceStationId = new SelectList(db.PoliceStations, "PoliceStationId", "NameEn", member.PoliceStationId);
-            ViewBag.PostOfficeId = new SelectList(db.PostOffices, "PostOfficeId", "NameEn", member.PostOfficeId);
-            ViewBag.VillageId = new SelectList(db.Villages, "VillageId", "NameEn", member.VillageId);
             ViewBag.ZoneId = new SelectList(db.Zones, "ZoneId", "NameEn", member.ZoneId);
             return View(member);
         }

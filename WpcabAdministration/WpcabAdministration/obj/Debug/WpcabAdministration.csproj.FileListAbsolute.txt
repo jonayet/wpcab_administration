@@ -112,3 +112,4 @@ F:\Projects\WPCAB\wpcab_administration\WpcabAdministration\WpcabAdministration\o
 F:\Projects\WPCAB\wpcab_administration\WpcabAdministration\WpcabAdministration\obj\Debug\WpcabAdministration.csproj.GenerateResource.Cache
 F:\Projects\WPCAB\wpcab_administration\WpcabAdministration\WpcabAdministration\obj\Debug\WpcabAdministration.Migrations.mig1.resources
 F:\Projects\WPCAB\wpcab_administration\WpcabAdministration\WpcabAdministration\obj\Debug\WpcabAdministration.Migrations.mig2.resources
+F:\Projects\WPCAB\wpcab_administration\WpcabAdministration\WpcabAdministration\obj\Debug\WpcabAdministration.Migrations.mig3.resources
