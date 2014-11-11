@@ -16,16 +16,16 @@
             @Html.DisplayNameFor(model => model.Country.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.District.NameEn)
+            @Html.DisplayNameFor(model => model.DistrictEn)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PoliceStation.NameEn)
+            @Html.DisplayNameFor(model => model.PoliceStationEn)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PostOffice.NameEn)
+            @Html.DisplayNameFor(model => model.PostOfficeEn)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Village.NameEn)
+            @Html.DisplayNameFor(model => model.VillageEn)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Zone.NameEn)
@@ -61,16 +61,16 @@
             @Html.DisplayNameFor(model => model.BloodGroup)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Photo)
+            @Html.DisplayNameFor(model => model.PhotoFileName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SignatureImage)
+            @Html.DisplayNameFor(model => model.SignatureFileName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
+            @Html.DisplayNameFor(model => model.Phone)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MobileNumber)
+            @Html.DisplayNameFor(model => model.Mobile)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Email)
@@ -85,7 +85,7 @@
             @Html.DisplayNameFor(model => model.DateOfMembership)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.StartDateOfAccount)
+            @Html.DisplayNameFor(model => model.DataFromKhedmatStarts)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.EducationalQualification)
@@ -103,7 +103,7 @@
             @Html.DisplayNameFor(model => model.MonthlyExpense)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NoOfFamilyMember)
+            @Html.DisplayNameFor(model => model.NoOfFamilyMembers)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.FinancialStatus)
@@ -121,7 +121,7 @@
             @Html.DisplayNameFor(model => model.IsInactive)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DateOfInactive)
+            @Html.DisplayNameFor(model => model.DateFromInactive)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ReferralId)
@@ -133,7 +133,7 @@
             @Html.DisplayNameFor(model => model.UserName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Password)
+            @Html.DisplayNameFor(model => model.PasswordHash)
         </th>
         <th></th>
     </tr>
@@ -144,16 +144,16 @@
             @Html.DisplayFor(modelItem => item.Country.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.District.NameEn)
+            @Html.DisplayFor(modelItem => item.DistrictEn)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PoliceStation.NameEn)
+            @Html.DisplayFor(modelItem => item.PoliceStationEn)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PostOffice.NameEn)
+            @Html.DisplayFor(modelItem => item.PostOfficeEn)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Village.NameEn)
+            @Html.DisplayFor(modelItem => item.VillageEn)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Zone.NameEn)
@@ -189,16 +189,16 @@
             @Html.DisplayFor(modelItem => item.BloodGroup)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Photo)
+            @Html.DisplayFor(modelItem => item.PhotoFileName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SignatureImage)
+            @Html.DisplayFor(modelItem => item.SignatureFileName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PhoneNumber)
+            @Html.DisplayFor(modelItem => item.Phone)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.MobileNumber)
+            @Html.DisplayFor(modelItem => item.Mobile)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Email)
@@ -213,7 +213,7 @@
             @Html.DisplayFor(modelItem => item.DateOfMembership)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.StartDateOfAccount)
+            @Html.DisplayFor(modelItem => item.DataFromKhedmatStarts)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.EducationalQualification)
@@ -231,7 +231,7 @@
             @Html.DisplayFor(modelItem => item.MonthlyExpense)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.NoOfFamilyMember)
+            @Html.DisplayFor(modelItem => item.NoOfFamilyMembers)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.FinancialStatus)
@@ -249,7 +249,7 @@
             @Html.DisplayFor(modelItem => item.IsInactive)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DateOfInactive)
+            @Html.DisplayFor(modelItem => item.DateFromInactive)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ReferralId)
@@ -261,12 +261,12 @@
             @Html.DisplayFor(modelItem => item.UserName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Password)
+            @Html.DisplayFor(modelItem => item.PasswordHash)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MemberId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MemberId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MemberId })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

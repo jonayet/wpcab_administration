@@ -99,18 +99,18 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Photo, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.PhotoFileName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Photo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Photo, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.PhotoFileName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PhotoFileName, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SignatureImage, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.SignatureFileName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SignatureImage, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SignatureImage, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.SignatureFileName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SignatureFileName, "", new { @class = "text-danger" })
             </div>
         </div>
 
