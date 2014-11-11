@@ -15,10 +15,12 @@ namespace WpcabAdministration.Controllers
     {
         private AppDbContext db = new AppDbContext();
         private List<string> _bloodGroups;
+        private List<string> _countries;
 
         public AdminController()
         {
             _bloodGroups = new List<string>{"A+", "B+", "AB+"};
+            _countries = new List<string> { "Bangladesh", "India", "USA" };
         }
 
         // GET: Admin
@@ -46,7 +48,8 @@ namespace WpcabAdministration.Controllers
         // GET: Admin/Create
         public ActionResult Create()
         {
-            ViewBag.CountryId = new SelectList(db.Countries, "CountryId", "Name");
+            //ViewBag.CountryId = new SelectList(db.Countries, "CountryId", "Name");
+            ViewBag.CountryId = new SelectList(_countries, "CountryId");
             ViewBag.DistrictId = new SelectList(db.Districts, "DistrictId", "NameEn");
             ViewBag.PoliceStationId = new SelectList(db.PoliceStations, "PoliceStationId", "NameEn");
             ViewBag.PostOfficeId = new SelectList(db.PostOffices, "PostOfficeId", "NameEn");
@@ -56,8 +59,15 @@ namespace WpcabAdministration.Controllers
             ViewBag.Relatives = new SelectList(db.Relatives, "Relatives", "NameBn");
             Member aMember = new Member()
             {
-                MemberId = 1,
-                Age = 25
+                MemberPin = 101,
+                Age = 25,
+                DateFromInactive = DateTime.Today,
+                DateOfBirth = DateTime.Today,
+                DateOfMembership = DateTime.Today,
+                DateOfPassing = DateTime.Today,
+                DateOfLastMonthlyKhedmat = DateTime.Today,
+                DateOfLastUpdate = DateTime.Today,
+                DataFromKhedmatStarts = DateTime.Today,
             };
             return View(aMember);
         }
@@ -69,6 +79,15 @@ namespace WpcabAdministration.Controllers
         {
             if (ModelState.IsValid)
             {
+                member.DateFromInactive = DateTime.Today;
+                member.DateOfBirth = DateTime.Today;
+                member.DateOfMembership = DateTime.Today;
+                member.DateOfPassing = DateTime.Today;
+                member.DateOfLastMonthlyKhedmat = DateTime.Today;
+                member.DateOfLastUpdate = DateTime.Today;
+                member.DataFromKhedmatStarts = DateTime.Today;
+                member.CountryId = 1;
+                member.ZoneId = 1;
                 db.Members.Add(member);
                 db.SaveChanges();
                 return RedirectToAction("Index");

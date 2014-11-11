@@ -3,7 +3,7 @@ namespace WpcabAdministration.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class mig : DbMigration
     {
         public override void Up()
         {
@@ -30,7 +30,8 @@ namespace WpcabAdministration.Migrations
                 "dbo.Members",
                 c => new
                     {
-                        MemberId = c.Int(nullable: false, identity: true),
+                        Id = c.Int(nullable: false, identity: true),
+                        MemberPin = c.Int(nullable: false),
                         PhotoFileName = c.String(),
                         NameEn = c.String(nullable: false),
                         NameBn = c.String(),
@@ -63,18 +64,18 @@ namespace WpcabAdministration.Migrations
                         DistrictEn = c.String(),
                         DistrictBn = c.String(),
                         CountryId = c.Int(nullable: false),
+                        Nationality = c.String(),
                         FormId = c.String(),
                         DateOfMembership = c.DateTime(nullable: false),
+                        StartDateOfAccount = c.DateTime(nullable: false),
                         IsInactive = c.Boolean(nullable: false),
                         DateFromInactive = c.DateTime(nullable: false),
-                        StartDateOfAccount = c.DateTime(nullable: false),
                         ReferralName = c.String(),
                         ReferralId = c.String(),
                         ZoneId = c.Int(nullable: false),
-                        EducationalQualification = c.String(),
                         Relegion = c.String(),
                         SubRelegion = c.String(),
-                        Nationality = c.String(),
+                        EducationalQualification = c.String(),
                         Profession = c.String(),
                         Experience = c.String(),
                         MonthlyIncome = c.Int(nullable: false),
@@ -83,12 +84,15 @@ namespace WpcabAdministration.Migrations
                         FinancialStatus = c.Int(nullable: false),
                         UserName = c.String(nullable: false, maxLength: 8),
                         PasswordHash = c.String(nullable: false, maxLength: 8),
-                        LastDateOfTransaction = c.DateTime(nullable: false),
-                        LastUpdateBy = c.String(),
-                        LastUpdateById = c.Int(nullable: false),
-                        SignatureFilePath = c.String(),
+                        TotalAmountOfMonthlyKhedmat = c.Double(nullable: false),
+                        AmountOfLastMonthlyKhedmat = c.Double(nullable: false),
+                        LastDateOfMonthlyKhedmat = c.DateTime(nullable: false),
+                        LastDateOfUpdate = c.DateTime(nullable: false),
+                        UpdatedBy = c.String(),
+                        UpdateById = c.Int(nullable: false),
+                        SignatureFileName = c.String(),
                     })
-                .PrimaryKey(t => t.MemberId)
+                .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Countries", t => t.CountryId, cascadeDelete: true)
                 .ForeignKey("dbo.Zones", t => t.ZoneId, cascadeDelete: true)
                 .Index(t => t.CountryId)

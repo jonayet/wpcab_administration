@@ -108,6 +108,6 @@ F:\Projects\WPCAB\wpcab_administration\WpcabAdministration\WpcabAdministration\b
 F:\Projects\WPCAB\wpcab_administration\WpcabAdministration\WpcabAdministration\obj\Debug\WpcabAdministration.csprojResolveAssemblyReference.cache
 F:\Projects\WPCAB\wpcab_administration\WpcabAdministration\WpcabAdministration\obj\Debug\WpcabAdministration.dll
 F:\Projects\WPCAB\wpcab_administration\WpcabAdministration\WpcabAdministration\obj\Debug\WpcabAdministration.pdb
-F:\Projects\WPCAB\wpcab_administration\WpcabAdministration\WpcabAdministration\obj\Debug\WpcabAdministration.Migrations.InitialCreate.resources
+F:\Projects\WPCAB\wpcab_administration\WpcabAdministration\WpcabAdministration\obj\Debug\WpcabAdministration.Migrations.mig.resources
 F:\Projects\WPCAB\wpcab_administration\WpcabAdministration\WpcabAdministration\obj\Debug\WpcabAdministration.csproj.GenerateResource.Cache
-F:\Projects\WPCAB\wpcab_administration\WpcabAdministration\WpcabAdministration\obj\Debug\WpcabAdministration.Migrations.init.resources
+F:\Projects\WPCAB\wpcab_administration\WpcabAdministration\WpcabAdministration\obj\Debug\WpcabAdministration.Migrations.mig1.resources

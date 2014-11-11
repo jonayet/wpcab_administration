@@ -11,9 +11,10 @@ namespace WpcabAdministration.Models
     public class Member
     {
         [Key]
-        [Editable(false)]
-        [Display(Name = "ID")]
-        public int MemberId { get; set; }
+        public int Id { get; set; }
+
+        [Display(Name = "PIN")]
+        public int MemberPin { get; set; }
 
         public string PhotoFileName { get; set; }
 
@@ -128,30 +129,27 @@ namespace WpcabAdministration.Models
 
         [Display(Name = "Country")]
         public int CountryId { get; set; }
-        public virtual Country Country { get; set; } 
+        public virtual Country Country { get; set; }
+
+        [Display(Name = "Nationality")]
+        public string Nationality { get; set; }
         #endregion
 
         #region Membership Information
         [Display(Name = "Form Id")]
         public string FormId { get; set; }
 
-        //[DataType(DataType.Date)]
-        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Date of Membership")]
         public DateTime DateOfMembership { get; set; }
+
+        [Display(Name = "Start date of Account")]
+        public DateTime DataFromKhedmatStarts { get; set; }
 
         [Display(Name = "Inactive")]
         public bool IsInactive { get; set; }
 
-        //[DataType(DataType.Date)]
-        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Date from Inactive")]
         public DateTime DateFromInactive { get; set; }
-
-        //[DataType(DataType.Date)]
-        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        [Display(Name = "Start date of Account")]
-        public DateTime StartDateOfAccount { get; set; }
 
         [Display(Name = "Referral")]
         public string ReferralName { get; set; }
@@ -163,17 +161,14 @@ namespace WpcabAdministration.Models
         #endregion
 
         #region Misc Information
-        [Display(Name = "Educational Qualification")]
-        public string EducationalQualification { get; set; }
-
         [Display(Name = "Relegion")]
         public string Relegion { get; set; }
 
         [Display(Name = "Sub Relegion")]
         public string SubRelegion { get; set; }
 
-        [Display(Name = "Nationality")]
-        public string Nationality { get; set; }
+        [Display(Name = "Educational Qualification")]
+        public string EducationalQualification { get; set; }
 
         [Display(Name = "Profession")]
         public string Profession { get; set; }
@@ -191,7 +186,7 @@ namespace WpcabAdministration.Models
         public int NoOfFamilyMembers { get; set; }
 
         [Display(Name = "Financial Status")]
-        public int FinancialStatus { get; set; } 
+        public int FinancialStatus { get; set; }
         #endregion
 
         #region Online Account Info
@@ -208,15 +203,19 @@ namespace WpcabAdministration.Models
         public string PasswordHash { get; set; } 
         #endregion
 
-        #region Application Internal Information
-        //[DataType(DataType.Date)]
-        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime LastDateOfTransaction { get; set; }
-
-        public string LastUpdateBy { get; set; }
-        public int LastUpdateById { get; set; } 
+        #region Account Info
+        public double TotalAmountOfMonthlyKhedmat { get; set; }
+        public double AmountOfLastMonthlyKhedmat { get; set; }
+        public DateTime DateOfLastMonthlyKhedmat { get; set; } 
         #endregion
 
+        #region Internal Info
+        public DateTime DateOfLastUpdate { get; set; }
+        public string LastUpdateBy { get; set; }
+        public int LastUpdateById { get; set; }
+        #endregion
+
+        [Display(Name = "Signature")]
         public string SignatureFileName { get; set; }
 
         //[NotMapped]

@@ -10,7 +10,6 @@ namespace WpcabAdministration.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "WpcabAdministration.Models.AppDbContext";
         }
 
         protected override void Seed(WpcabAdministration.Models.AppDbContext context)

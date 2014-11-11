@@ -7,13 +7,13 @@ namespace WpcabAdministration.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class init : IMigrationMetadata
+    public sealed partial class mig : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(mig));
         
         string IMigrationMetadata.Id
         {
-            get { return "201411101344106_init"; }
+            get { return "201411111136144_mig"; }
         }
         
         string IMigrationMetadata.Source
